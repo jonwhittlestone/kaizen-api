@@ -1,0 +1,11 @@
+Strava App URL:     https://www.strava.com/settings/api
+Swagger Plaground:  https://developers.strava.com/playground/
+Playground:     
+Client ID:          36156
+Client Secret:      1f8a48683b0d8547e964b2d82f7c814c33df5d29
+
+Access Token:       {short expiry}
+Refresh Token:      db8dba217c370a5d1730a3677232782e8b5f40a0
+
+Rate Limits:        600 every 15 mins / 30,000 daily
+

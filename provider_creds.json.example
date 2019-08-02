@@ -1,0 +1,27 @@
+
+{
+    "amex": {
+        "username":"",
+        "password":"",
+        "locale": "en_GB"
+    },
+    "sjd": {
+        "username":"",
+        "password":""
+    },
+    "gmail": {
+        "email":"",
+        "app_pwd":""
+    },
+    "pocket": {
+        "consumer": "",
+        "access": ""
+    },
+    "goodreads": {
+        "key": "",
+        "secret": ""
+    },
+    "strava": {
+        "access_token": "",
+    }
+}
