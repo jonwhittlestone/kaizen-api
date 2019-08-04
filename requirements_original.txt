@@ -1,0 +1,7 @@
+numpy
+goodreads
+IMAPClient
+MechanicalSoup
+pyamex
+pocket-api
+stravaio
