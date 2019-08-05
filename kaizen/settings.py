@@ -18,7 +18,7 @@ DEBUG = True
 
 WEB_HOST = config('DJANGO_WEB_HOST', default='localhost')
 
-ALLOWED_HOSTS = [WEB_HOST, 'localhost']
+ALLOWED_HOSTS = [WEB_HOST, 'localhost', 'kaizen-api.howapped.com']
 
 
 # Application definition
