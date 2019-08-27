@@ -12,8 +12,18 @@ To run in a Python 3 Virtual Env:
 
 Natrually, this app continues to improve.
 
+## Redis Timeseries
+An example of analysing of timeseries data can be found in the following note$book.
 
+You'll need to have Redis with the Timeseries module accessible at localhost. Using docker, you can do:
 
+    docker run \
+    -p 6379:6379 \           
+    -v /home/jon/docker-data:/data \
+    -d redislabs/redismod \
+    -- loadmodule /usr/lib/redis/modules/redistimeseries.so \
+    -- dir /data \
+    -- dbfilename dump.rdb
 
 
 
