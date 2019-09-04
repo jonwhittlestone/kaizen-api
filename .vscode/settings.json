@@ -4,5 +4,9 @@
         "titleBar.activeBackground": "#394425",
         "titleBar.activeForeground": "#F9FAF6"
     },
-    "python.pythonPath": "venv/bin/python"
+    "python.pythonPath": "venv/bin/python",
+    "python.linting.pylintEnabled": false,
+    "python.linting.pep8Enabled": true,
+    "python.linting.enabled": true,
+    "python.formatting.blackPath": ""
 }

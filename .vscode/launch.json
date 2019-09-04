@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "name": "Server Django",
             "type": "python",
@@ -18,7 +19,7 @@
             "django":false
         },
         {
-            "name": "Server Tests - tests_providers",
+            "name": "Tests - tests_providers",
             "type": "python",
             "request": "launch",
             "cwd":"${workspaceFolder}",
@@ -27,6 +28,43 @@
             "args": [
                 "test",
                 "tests.tests_providers"
+            ],
+            "django":true
+        },
+        {
+            "name": "Mgmt Command - Capture",
+            "type": "python",
+            "request": "launch",
+            "cwd":"${workspaceFolder}",
+            "program": "${workspaceFolder}/manage.py",
+            "console": "integratedTerminal",
+            "args": [
+                "capture"
+            ],
+            "django":true
+        },
+
+        {
+            "name": "utils/redis_example.py",
+            "type": "python",
+            "request": "launch",
+            "cwd":"${workspaceFolder}",
+            "program": "${workspaceFolder}/utils/redis_example.py",
+            "console": "integratedTerminal",
+            "args": [],
+            "django":false
+        },
+
+        {
+            "name": "Test - MetricTests",
+            "type": "python",
+            "request": "launch",
+            "cwd":"${workspaceFolder}",
+            "program": "${workspaceFolder}/manage.py",
+            "console": "integratedTerminal",
+            "args": [
+                "test",
+                "apps.metric.tests.MetricTests.test_retrieve_timeseries_from_redis"
             ],
             "django":true
         },

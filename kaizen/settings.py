@@ -3,6 +3,8 @@ import json
 from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+
+PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -30,7 +32,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.metric'
+    'apps.metric',
+
+    # third parties
+    'kronos'
+
 ]
 
 MIDDLEWARE = [
@@ -74,6 +80,12 @@ DATABASES = {
     }
 }
 
+# Redis Config
+REDIS_HOST = '127.0.0.1'
+REDIS_PORT = 6379
+REDIS_PASSWORD = ''
+REDIS_DB = 1
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -114,6 +126,43 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'standard': {
+            'format': "%(asctime)s | %(levelname)s | %(name)s:%(lineno)s | %(message)s",
+            'datefmt': "%Y-%b-%d %H:%M:%S"
+        },
+    },
+    'handlers': {
+        'logfile': {
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': PROJECT_DIR + "/debug.log",
+            'maxBytes': 50000,
+            'backupCount': 2,
+            'formatter': 'standard',
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'standard'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'propagate': True,
+            'level': 'WARNING',
+        },
+        '': {
+            'handlers': ['console', 'logfile'],
+            'level': 'DEBUG',
+        }
+    }
+}
 
 ### PROVIDER CREDENTIALS ###
 CONFIG_FILE = os.path.join(BASE_DIR, 'provider_creds.json')
