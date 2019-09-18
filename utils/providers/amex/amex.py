@@ -11,8 +11,8 @@ client = AmexClient(username=username, password=password, locale=locale)
 
 
 # Print all account balances
-def get_balance(product_name='British Airways American Express Credit Card'):
+def get_balance(product_name='British Airways'):
     accounts = client.accounts()
     for account in accounts:
-        if account.card_product == product_name:
+        if product_name in account.card_product:
             return account.total_balance
