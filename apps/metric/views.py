@@ -21,6 +21,9 @@ now = datetime.datetime.now()
 def index(request):
     return HttpResponse('Hello')
 
+def _fmt_curr(value):
+    return round(float(value))
+
 
 def get(request):
 
@@ -37,14 +40,14 @@ def get(request):
 
     return JsonResponse({
         'AIM HIGHER': {
-            'PROFITS': HowappedReader().reported_profits,
+            'PROFITS': _fmt_curr(HowappedReader().reported_profits),
             'BOOKS READ THIS YEAR': GrClient().books_on_shelf_count(f'read-{now.year}'),
             # 'MONTHLY KM CYCLED': Strava().monthly_km_cycled,
         },
         'AIM LOWER': {
             # 'GMAIL INBOX': service_values['gmail']['value'],
             'GMAIL_INBOX': inbox_count(),
-            'AMEX BALANCE': get_amex_balance(),
+            'AMEX BALANCE': _fmt_curr(get_amex_balance()),
             'POCKET ARTICLES': pocket_client.article_count(),
         },
     })
