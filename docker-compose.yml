@@ -3,15 +3,17 @@ version: '3'
 services:
   web:
     build: .
-    command: gunicorn kaizen.wsgi --bind 0.0.0.0:8001
     ports:
       - "8001:8001"
     networks:
       - backend
     volumes:
       - .:/code
+    depends_on:
+      - redis
     environment:
       DJANGO_WEB_HOST: "web"
+    # command: gunicorn kaizen.wsgi --bind 0.0.0.0:8001
 
   nginx:
     image: nginx:latest
@@ -24,6 +26,18 @@ services:
       - web
     environment:
       DJANGO_WEB_HOST: "web"
+    networks:
+      - backend
+
+  redis:
+    image: redislabs/redismod
+    ports:
+      - 6379:6379
+    volumes:
+      - ./data:/code/data
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+    environment:
+      DJANGO_REDIS_HOST: "redis"
     networks:
       - backend
 

@@ -22,11 +22,8 @@ urllib3==1.25.3
 xmltodict==0.12.0
 python-decouple
 gunicorn
-Django==2.2.4
-python-decouple
 pandas
 redis
 redis_timeseries
-pep8
-django-kronos
 arrow
+pep8

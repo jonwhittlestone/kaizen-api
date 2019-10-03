@@ -19,6 +19,7 @@ DEBUG = True
 
 
 WEB_HOST = config('DJANGO_WEB_HOST', default='localhost')
+REDIS_HOST = config('DJANGO_REDIS_HOST', default='localhost')
 
 ALLOWED_HOSTS = [WEB_HOST, 'localhost', 'kaizen-api.howapped.com']
 
@@ -35,7 +36,6 @@ INSTALLED_APPS = [
     'apps.metric',
 
     # third parties
-    'kronos'
 
 ]
 
@@ -81,7 +81,7 @@ DATABASES = {
 }
 
 # Redis Config
-REDIS_HOST = '127.0.0.1'
+REDIS_HOST = REDIS_HOST
 REDIS_PORT = 6379
 REDIS_PASSWORD = ''
 REDIS_DB = 1
