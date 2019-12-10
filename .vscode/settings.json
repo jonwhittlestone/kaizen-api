@@ -6,7 +6,7 @@
     },
     "python.pythonPath": "venv/bin/python",
     "python.linting.pylintEnabled": false,
-    "python.linting.pep8Enabled": true,
+    "python.linting.pycodestyleEnabled": true,
     "python.linting.enabled": true,
     "python.formatting.blackPath": ""
 }

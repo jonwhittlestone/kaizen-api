@@ -8,6 +8,8 @@ from utils.providers.sjd.sjd import HowappedReader
 from utils.providers.goodreads.client import (
     Client as GrClient
 )
+
+from utils.providers.pocket import pocket_client
 # from utils.providers.strava.api import (
     # Client as Strava
 # )
