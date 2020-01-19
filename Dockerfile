@@ -3,8 +3,7 @@ ENV PYTHONUNBUFFERED 1
 RUN mkdir /code
 WORKDIR /code
 RUN apk update
-RUN apk add make automake gcc g++ python3-dev subversion libxml2-dev libxslt-dev curl
-
+RUN apk add make automake libressl-dev libffi-dev gcc g++ python3-dev subversion libxml2-dev libxslt-dev curl
 RUN pip3 install --upgrade pip
 ADD requirements.txt /code/
 # RUN pip install Cython numpy 
