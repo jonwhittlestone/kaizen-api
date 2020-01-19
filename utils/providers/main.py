@@ -14,7 +14,7 @@ def main():
     print('')
     print(f"GMAIL INBOX:\t\t\t{inbox_count()}")
     print(f"AMEX BALANCE:\t\t\t{get_amex_balance()}")
-    print(f"HOWAPPED PROFITS:\t\t{howapped.reported_profits}")
+    print(f"HOWAPPED PROFITS:\t\t{howapped.profits}")
     print(f"POCKET ARTICLES:\t\t{pocket_client.acticle_count()}")
 
     print('')

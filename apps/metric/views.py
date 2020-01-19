@@ -42,7 +42,7 @@ def get(request):
 
     return JsonResponse({
         'AIM HIGHER': {
-            'PROFITS': _fmt_curr(HowappedReader().reported_profits),
+            'CLEARED PROFITS': _fmt_curr(HowappedReader().cleared_profits),
             'BOOKS READ THIS YEAR': GrClient().books_on_shelf_count(f'read-{now.year}'),
             # 'MONTHLY KM CYCLED': Strava().monthly_km_cycled,
         },

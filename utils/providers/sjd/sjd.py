@@ -42,10 +42,15 @@ class HowappedReader:
         return sum(dividend_values)
 
     @property
-    def reported_profits(self):
+    def cleared_profits(self):
         company_overview_div = self.homepage.find("div", class_="threecolwidget")
         reported_profits = self.__clean_currency(company_overview_div.select("span:nth-of-type(2)")[0].text)
         est_dividend_tax_owed = self.total_dividends_withdrawn * \
             round((DIVIDEND_TAX_LOWER_THRESHOLD / 100), 2)
-        net_reported_profits = reported_profits - est_dividend_tax_owed
-        return net_reported_profits
+        profits = reported_profits - est_dividend_tax_owed
+        # add owed to director
+        owed_to_director =   self.__clean_currency(company_overview_div.select("span:nth-of-type(3)")[0].text) 
+        # note. if this was just 'profits' and not 'cleared profits', we would, add unpaid invoices
+        unpaid_invoices =   self.__clean_currency(company_overview_div.select("span:nth-of-type(4)")[0].text) 
+
+        return profits + owed_to_director
