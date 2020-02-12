@@ -9,7 +9,7 @@ chardet==3.0.4
 croniter==0.3.30
 cryptography==2.7
 Cython==0.29.13
-Django==2.2.8
+Django==2.2.10
 fabric==2.5.0
 goodreads==0.3.2
 gunicorn==19.9.0
