@@ -24,6 +24,8 @@ def index(request):
     return HttpResponse('Hello')
 
 def _fmt_curr(value):
+    if isinstance(value, str):
+        return value
     return round(float(value))
 
 
