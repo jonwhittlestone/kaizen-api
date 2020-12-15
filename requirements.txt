@@ -9,7 +9,7 @@ chardet==3.0.4
 croniter==0.3.30
 cryptography==2.7
 Cython==0.29.13
-Django==2.2.8
+Django==2.2.13
 django-cors-headers==3.6.0
 django-cronman==1.1.1
 django-kronos==1.0
