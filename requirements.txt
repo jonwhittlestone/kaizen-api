@@ -10,6 +10,9 @@ croniter==0.3.30
 cryptography==2.7
 Cython==0.29.13
 Django==2.2.8
+django-cors-headers==3.6.0
+django-cronman==1.1.1
+django-kronos==1.0
 fabric==2.5.0
 goodreads==0.3.2
 gunicorn==19.9.0
