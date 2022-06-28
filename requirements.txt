@@ -1,4 +1,4 @@
-arrow==0.14.6
+arrow==0.15.1
 asn1crypto==0.24.0
 autopep8==1.4.4
 bcrypt==3.1.7
